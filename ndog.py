@@ -31,8 +31,8 @@ class NginxPattern(PatternMatchingEventHandler):
             os.remove(path)
             self.reload()
 
-    # def on_modified(self, event):
-    #     print(f"hey buddy, {event.src_path} has been modified")
+    def on_modified(self, event):
+        self.reload()
 
     # def on_moved(self, event):
     #     print(f"ok ok ok, someone moved {event.src_path} to {event.dest_path}")
